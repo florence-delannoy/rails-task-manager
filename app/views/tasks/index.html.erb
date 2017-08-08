@@ -1,0 +1,13 @@
+<h1>TO-DO List</h1>
+
+<ul>
+<% @tasks.each do |task| %>
+  <li><%= task.name %></li>
+  <p class="btn btn-primary"> <%= link_to "more details", task_path(task.id) %></p>
+  <p><%= link_to "Delete", task_path(task),
+  	    method: :delete,
+  	    data: { confirm: "Are you sure?" } %></p>
+<% end %>
+</ul>
+
+
